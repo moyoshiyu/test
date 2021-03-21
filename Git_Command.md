@@ -38,6 +38,40 @@
 1. **git addコマンド**でステージングする
 * git add *ファイルまたはフォルダ*
 * カレントディレクトリすべて対象は**git add.**
+2. **git status**コマンドでリポジトリの状態を確認する
+* 「On branch *ブランチ名*」(master)現在のブランチ
+* 「No commits yet」　コミットがないと表示
+* 「Changes to be committed:」ステージングされていてコミットされていないファイルが緑色で表示される
+~~~
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git_Commnd.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$ git add .
+
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Git_Commnd.md
+
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$
+~~~
+
+
+
 ----
 # Gitコマンド
 |コマンド |内容 |

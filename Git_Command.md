@@ -70,7 +70,68 @@ yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
 $
 ~~~
 
+### git commitコマンドでコミットする
+1. **git commit**実行すると、VS Codeが反応して「COMMIT_EDITMSG」というタブが開く
+* 1行目にコミットのタイトル 
+* 2行目は空けて、3行目以降に詳細を書いていく
+* 書き終わったら `Ctrl`+`s`で保存
+* 「COMMIT_EDITMSG」タブを「×」で閉じる
+* コミットの結果を確認
+* リポジトリの状態 **git status**
+* コミットの履歴を確認 **git log**
+* 
 
+# リモートリポジトリに変更履歴を反映する方法
+## リモートリポジトリに変更履歴を反映する**git push**コマンド
+* git push *リモートリポジトリ名　ブランチ名*
+## リモートリポジトリ名を調べる
+* git remote
+~~~
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$ git remote
+origin
+
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$
+~~~
+* 「origin」がリモートリポジトリ名
+## ブランチ名を調べる
+* git status
+~~~
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$
+~~~
+* On branch **master** がブランチ名
+## リモートリポジトリにプッシュする
+* リモートリポジトリ名: origin
+* ブランチ名: master
+* 「`git push origin master`」
+```
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 2.48 KiB | 1.24 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/moyoshiyu/test.git
+   f6bc2ea..5679b8b  master -> master
+
+yoshiyuki@yoshiyuki1 MINGW64 ~/test (master)
+$
+```
+
+  
 
 ----
 # Gitコマンド
